@@ -1,4 +1,13 @@
-import React from 'react'
+import React from 'react';
+import styles from '@styles/comic/comic.module.css';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMagnifyingGlass,
+  faCircleStop,
+  faBoltLightning
+} from "@fortawesome/free-solid-svg-icons";
+
 
 const AddToFavoritesButton = ({comic}) => {
   return (
@@ -6,8 +15,10 @@ const AddToFavoritesButton = ({comic}) => {
         type='button'
         onClick={() => {
             console.log(`${comic.title} added to favorites`)
-        }}>
-            Add to Favorite
+        }}
+        className={styles.addToFavorites}
+        >
+            <FontAwesomeIcon className={styles.bolt} icon={faBoltLightning} />
         </button>
   )
 }

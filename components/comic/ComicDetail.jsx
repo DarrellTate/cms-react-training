@@ -1,17 +1,28 @@
 import React from 'react'
+import styles from '@styles/comic/comic.module.css';
+
 
 const ComicDetail = ({ comic }) => {
     const comicDate = new Date(comic.publishDate).toLocaleDateString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
 
     return (
-        <div className="content">
-            <h3 className='title'>{comic.title}</h3>
-            <span><span className='content-label'>Issue: </span>{comic.issueNumber}</span>
+        <div className={styles.content}>
+            <h3 className={styles.title}>{comic.title}</h3>
 
-            <ul className='bottom-content'>
-                <li><span className='content-label'>Published:<br /></span>{comicDate}</li>
-                <li>
-                    <span className='content-label'>Creators:<br /></span>
+            <ul className={styles.bottomContent}>
+                <li className={styles.field}>
+                    <span className={styles.label}>Issue: </span>{comic.issueNumber}
+                </li>
+
+                <li className={styles.field}>
+                    <span className={styles.label}>Published:</span>
+                    <br />
+                    {comicDate}
+                </li>
+
+                <li className={styles.field}>
+                    <span className={styles.label}>Creators:</span>
+                    <br />
                     <span>
                         {comic.creators
                             .slice(0, 2)
@@ -20,6 +31,7 @@ const ComicDetail = ({ comic }) => {
                             .join(', ')}
                     </span>
                 </li>
+                
             </ul>
         </div>
     )

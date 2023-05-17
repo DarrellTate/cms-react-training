@@ -1,6 +1,7 @@
 'use client'
 
 import ComicItem from '@components/comic/Comic';
+import styles from '@styles/comic-grid.module.css';
 
 const comics = [
     {
@@ -512,13 +513,11 @@ const comics = [
 
 const ComicList = () => {
     return (
-        <ul>
-            <li>
-                {comics.map(
-                    comic => <ComicItem key={comic.id} comic={comic} />
-                )}
-            </li>
-        </ul>
+        <div className={styles.grid}>
+            {comics.map(
+                comic => <ComicItem key={comic.id} comic={comic} className="styles.item"/>
+            )}
+        </div>
     )
 }
 

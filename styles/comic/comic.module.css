@@ -1,0 +1,63 @@
+.imageCont {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 183/276;
+    margin-bottom: 30px;
+}
+
+.image {
+    width: 100%;
+    box-shadow: 0px 5px 15px #00000029;
+}
+
+.addToFavorites{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background: #222222 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.bolt {
+    color: #f2f2f8;
+    font-size: 16px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: #222222;
+    padding-right: 11px;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.22em;
+    color: #222222;
+    margin-bottom: 10px;
+}
+
+.bottomContent {
+    font-family: 'Monterrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #222222;
+    letter-spacing: 0;
+}
+
+.field {
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+.label {
+    font-weight: 700;
+}
