@@ -14,3 +14,15 @@ module.exports = {
         ],
     },
 }
+
+// Next.js chrome devtools coverage settings
+// module.exports = {
+//     webpack(config) {
+//         config.optimization.chunkIds = 'named'
+//         config.optimization.mangleExports = false
+//         config.optimization.minimize = false
+//         config.optimization.minimizer = []
+//         config.optimization.moduleIds = 'named'
+//         return config
+//     }
+// }

@@ -1,0 +1,45 @@
+.favoritesListGrid {
+    position: relative;
+}
+
+.inner {
+    background: #222;
+    padding: 0 30px 30px;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font: normal normal 900 25px/30px Montserrat;
+    letter-spacing: 0.25px;
+    color: #F8F8F2;
+    margin-bottom: 30px;
+}
+
+.mobileFavorites {
+    position: absolute;
+    bottom: 0;
+}
+
+@media( min-width: 64em) {
+    .favoritesListGrid {
+        margin-bottom: 0;
+        position: static;
+        /* position: relative;
+        top: -110px; */
+    }
+    
+    .inner {
+        background: #222;
+        padding: 20px 30px;
+    }
+}
+
+@media( min-width: 86em) {
+    .favoritesListGrid {
+        position: relative;
+        top: -110px;
+    }
+}

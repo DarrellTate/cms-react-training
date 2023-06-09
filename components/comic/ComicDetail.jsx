@@ -1,13 +1,33 @@
-import React from 'react'
 import styles from '@styles/comic/comic.module.css';
 
-
 const ComicDetail = ({ comic }) => {
-    const comicDate = new Date(comic.publishDate).toLocaleDateString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
+    let comicDate, creators;
+
+    if (comic) {
+        // comicDate =
+        //     new Date(comic.dates[0].date).toLocaleDateString(
+        //         'en-us', {
+        //             month: 'long',
+        //             day: 'numeric',
+        //             year: 'numeric'
+        //         }
+        //     );
+    
+        creators = comic.creators?.items?.length
+            // reduce array down to the first 2 creators
+            ? comic.creators.items.slice(0, 2)
+                // grab their last names
+                .map(creator => creator.name.substr(creator.name.indexOf(' ') + 1))
+                 // create a string from their last names
+                .join(', ')
+            : "No Creators found."
+    }
 
     return (
         <div className={styles.content}>
-            <h3 className={styles.title}>{comic.title}</h3>
+            <h3 className={styles.title}>
+                {comic.title}
+            </h3>
 
             <ul className={styles.bottomContent}>
                 <li className={styles.field}>
@@ -23,13 +43,7 @@ const ComicDetail = ({ comic }) => {
                 <li className={styles.field}>
                     <span className={styles.label}>Creators:</span>
                     <br />
-                    <span>
-                        {comic.creators
-                            .slice(0, 2)
-                            .map(creator =>
-                                creator.name.substr(creator.name.indexOf(' ') + 1))
-                            .join(', ')}
-                    </span>
+                    { creators && <span>{creators}</span> }
                 </li>
                 
             </ul>

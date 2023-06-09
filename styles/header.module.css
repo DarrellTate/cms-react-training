@@ -1,0 +1,118 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.logo {
+    padding-left: 20px;
+    display: none
+}
+
+.logoMobile {
+    display: block;
+}
+
+.headerRight {
+    padding-right: 20px;
+    color: #F8F8F2;
+    margin: 6px 0;
+}
+
+.navMoblieContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+}
+
+.navMoblieContainer a:-webkit-any-link {
+    color: #F8F8F2;
+    text-decoration: none;
+}
+
+.favoriteCounter {
+    /* margin-right: 20px; */
+}
+
+.navMobileToggle {
+    padding: 4px;
+    border: 2px solid #F8F8F2;
+    border-radius: 7px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navMobileToggle:hover {
+    cursor: pointer;
+}
+
+.navMobile {
+    position: absolute;
+    bottom: -5px;
+    transform: translateY(100%);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #C24868E6;
+    padding: 4px;
+}
+
+.nav a:-webkit-any-link {
+    color: #F8F8F2;
+    text-decoration: none;
+}
+
+.navDesktop {
+    display: none;
+}
+
+@media (min-width: 64em) {
+    .logoMobile {
+        display: none;
+    }
+
+    .logoDesktop {
+        display: block;
+    }
+
+    .navMoblieContainer {
+        display: none;
+    }
+
+    .navDesktop {
+        display: flex;
+        margin-right: 60px;
+    }
+
+    .nav {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-right: 30px;
+    }
+
+    .nav a:-webkit-any-link,
+    .navDesktop a:-webkit-any-link {
+        color: #F8F8F2;
+        font: normal normal bold 18px/16px Montserrat;
+        text-decoration: none;
+    }
+
+    .bolt {
+        margin-right: 5px;
+    }
+}

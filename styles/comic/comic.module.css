@@ -1,25 +1,50 @@
+
+.comicItem {
+    display: flex;
+    width: 100%;
+}
+
 .imageCont {
+    flex: 1 0 125px;
     position: relative;
     width: 100%;
-    aspect-ratio: 183/276;
-    margin-bottom: 30px;
+    aspect-ratio: 125/188;
+    max-width: 125px;
+    order: 1;
 }
 
 .image {
-    width: 100%;
     box-shadow: 0px 5px 15px #00000029;
 }
 
+.smallImage {
+    display: block;
+}
+
+.largeImage {
+    display: none;
+}
+
+/*----------  add to Favorites Button  ---------*/
 .addToFavorites{
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 50%;
+    left: 0%;
     transform: translate(-50%, 50%);
     border-radius: 50%;
     height: 30px;
     width: 30px;
     background: #222222 0% 0% no-repeat padding-box;
-    opacity: 1;
+    border: 2px solid #222222;
+}
+
+.addToFavorites:hover {
+    cursor: pointer;
+}
+
+.favorited {
+    background: #C24868 0% 0% no-repeat padding-box;
+    border: 2px solid #F8F8F2;
 }
 
 .bolt {
@@ -27,13 +52,16 @@
     font-size: 16px;
 }
 
+/*----------  Comic Content  ---------*/
 .content {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     height: 100%;
     color: #222222;
     padding-right: 11px;
 }
+
 
 .title {
     font-family: 'Montserrat', sans-serif;
@@ -51,6 +79,8 @@
     line-height: 19px;
     color: #222222;
     letter-spacing: 0;
+    padding-left: 0;
+    margin: 0;
 }
 
 .field {
@@ -60,4 +90,31 @@
 
 .label {
     font-weight: 700;
+}
+
+@media (min-width: 64em) {
+    .comicItem {
+        display: block;
+    }
+    
+    .imageCont {
+        aspect-ratio: 183/276;
+        max-width: 276px;
+        margin-bottom: 10px;
+    }
+
+    .smallImage {
+        display: none;
+    }
+
+    .largeImage {
+        display: block;
+    }
+
+    .addToFavorites {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
 }
